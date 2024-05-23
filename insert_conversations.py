@@ -1,5 +1,3 @@
-# insert_conversation.py
-
 from pymongo import MongoClient
 import json
 import config
