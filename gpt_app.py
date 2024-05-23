@@ -3,7 +3,10 @@ from langchain_core.prompts import PromptTemplate
 from langchain_openai import OpenAI
 from pymongo import MongoClient
 import os
+from datetime import datetime, timezone
 
+# My personal libraries 
+import insert_conversations
 import config
 
 # Set your OpenAI API key here
@@ -29,8 +32,22 @@ def create_prompt_template():
 
 def initialize_conversation():
     """Initialize the conversation with a greeting."""
-    user_name = input("Assistant: Hey, what's your name? \nYou: ")
-    conversation_history = f"User: My name is {user_name}\nAssistant: Hey {user_name}, tell me about your day."
+    user_name = input("Assistant: Hey, what's your user name? \nYou: ")
+    print(user_name)
+    conversation_history = []
+    conversation_history.append(
+    {
+        "sender": "User",
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "message": f"{user_name}"
+    })
+    conversation_history.append(
+    {
+        "sender": "Assistant",
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "message": f"Hey {user_name}, tell me about your day."
+    })
+    # conversation_history = f"User: My name is {user_name}\nAssistant: Hey {user_name}, tell me about your day."
     print(f"Assistant: Hey {user_name}, tell me about your day.")
     return user_name, conversation_history
 
@@ -56,13 +73,25 @@ def interactive_llm():
         user_input = input("You: ")
 
         if user_input.lower() in ["exit", "quit"]:
-            print("Ending conversation.")
+            # print("Ending conversation. Here is the convo History: ", conversation_history)
+            insert_conversations.conversation_to_mongo(user_name, conversation_history)
             break
 
         try:
             response = llm_chain.invoke({"history": conversation_history, "user_input": user_input})
             print(f"Assistant: {response}")
-            conversation_history += f"\nUser: {user_input}\nAssistant: {response}"
+            conversation_history.append(
+            {
+                "sender": "User",
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+                "message": f"{user_input}"
+            })
+            conversation_history.append(
+            {
+                "sender": "Assistant",
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+                "message": f"{response}"
+            })
         except Exception as e:
             print(f"Error during LLMChain run: {e}")
 
