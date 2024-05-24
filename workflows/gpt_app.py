@@ -1,5 +1,14 @@
-# from langchain import LLMChain
-from datetime import datetime, timezone
+# --------------------------------------------------------------------------------------------
+# Title: Performance Review Assistant - General Assistance Workflow
+# Author: Tanner Papenfuss
+# Date: 2024-05-23
+# Description: 
+# This workflow is for the user to ask questions, seek advice, or get general assistance 
+# related to their performance reviews, goals, and accomplishments. All conversations should 
+# be saved and conversations / goals should be retrieved from the mongoDB. This should be 
+# another python file that is called by the main orchestrator file. If at any time the user 
+# wants to update their goals, they can and will be routed to the CRUD workflow.
+# --------------------------------------------------------------------------------------------
 
 # My personal libraries 
 from mongodb.insert_conversations import conversation_to_mongo
