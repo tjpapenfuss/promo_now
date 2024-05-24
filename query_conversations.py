@@ -12,12 +12,25 @@ db = client['conversation_db']
 # Access the collection
 collection = db['conversations']
 
-# Find all conversations for a specific user
-user_id = "tpap"
-conversations = collection.find({"metadata.user_id": user_id})
+def get_conversations(user_name):
+    # Find all conversations for a specific user
+    conversations = collection.find({"metadata.user_name": user_name})
+    return list(conversations)
 
-# Display the conversations
-for conv in conversations:
-    print(conv)
+def format_conversations(conversations):
+    formatted = ""
+    for conv in conversations:
+        for message in conv["messages"]:
+            sender = "User" if message["sender"] == "User" else "Assistant"
+            formatted += f"{sender}: {message['message']}\n"
+    return formatted
 
-print("Query complete.")
+if __name__ == "__main__":
+    user_name = "tpap"
+    conversations = get_conversations(user_name)
+    formatted_conversations = format_conversations(conversations)
+    
+    # Display the formatted conversations
+    print(formatted_conversations)
+
+    print("Query complete.")

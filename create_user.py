@@ -12,17 +12,20 @@ db = client['conversation_db']
 # Create (or use existing) collection for users
 user_collection = db['users']
 
+def get_user_info(user_name):
+    return user_collection.find_one({"user_name": user_name})
+
 # Function to create a new user
-def create_user(user_id, name, email):
+def create_user(user_name, name, email):
     # Check if the user already exists
-    existing_user = user_collection.find_one({"user_id": user_id})
+    existing_user = user_collection.find_one({"user_name": user_name})
     if existing_user:
-        print(f"User with ID {user_id} already exists.")
+        print(f"User with ID {user_name} already exists.")
         return
     
     # Create a new user document
     user = {
-        "user_id": user_id,
+        "user_name": user_name,
         "name": name,
         "email": email
     }
@@ -34,9 +37,9 @@ def create_user(user_id, name, email):
 # Example usage
 if __name__ == "__main__":
     # Example user data
-    user_id = "tpap"
+    user_name = "tpap"
     name = "Tanner Papenfuss"
     email = "tpap@gmail.com"
     
     # Create the new user
-    create_user(user_id, name, email)
+    create_user(user_name, name, email)

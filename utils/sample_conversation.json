@@ -1,34 +1,44 @@
 {
-    "conversation_id": "12345",
-    "timestamp": "2024-05-23T12:34:56Z",
-    "messages": [
-      {
-        "sender": "user",
-        "timestamp": "2024-05-23T12:34:56Z",
-        "message": "Hello, I need help with my account."
-      },
-      {
-        "sender": "bot",
-        "timestamp": "2024-05-23T12:34:58Z",
-        "message": "Sure, I can help with that. What seems to be the problem?"
-      },
-      {
-        "sender": "user",
-        "timestamp": "2024-05-23T12:35:10Z",
-        "message": "I can't log in to my account."
-      },
-      {
-        "sender": "bot",
-        "timestamp": "2024-05-23T12:35:15Z",
-        "message": "I see. Have you tried resetting your password?"
-      }
-    ],
-    "metadata": {
-      "user_id": "tpap",
-      "session_id": "session_456",
-      "language": "en",
-      "context": {
-        "previous_issue": "password reset"
-      }
+  "_id": {
+    "$oid": "664f907c5450bc075925b87a"
+  },
+  "conversation_id": "0206f196-64ce-4674-bcd5-9e3de0f7d2aa",
+  "timestamp": "2024-05-23T18:52:44.359218+00:00",
+  "messages": [
+    {
+      "sender": "User",
+      "timestamp": "2024-05-23T18:52:08.324913+00:00",
+      "message": "tpap"
+    },
+    {
+      "sender": "Assistant",
+      "timestamp": "2024-05-23T18:52:08.324932+00:00",
+      "message": "Hey tpap, tell me about your day."
+    },
+    {
+      "sender": "User",
+      "timestamp": "2024-05-23T18:52:23.961932+00:00",
+      "message": "Well I have been working with Joe on my alignment of the surface platform to deliver the FoF platform for the enterprise data teams. I also talked with Jim and we talked through the vision of our program. This helped to put us on the right direction. Finally, I had a solid output this afternoon. I was able to get my code working for the LLM that I am building. This will help our organizion with the start of our app. "
+    },
+    {
+      "sender": "Assistant",
+      "timestamp": "2024-05-23T18:52:23.961952+00:00",
+      "message": "It sounds like you've had a busy day! It's great that you've been able to work on aligning the surface platform and delivering results for the FoF platform. It's also important that you were able to talk through the vision of your program with Jim, as that will help to keep everyone on the same page. And congrats on getting your code working for the LLM! That will definitely be a helpful tool for the organization. Keep up the good work!"
+    },
+    {
+      "sender": "User",
+      "timestamp": "2024-05-23T18:52:35.936137+00:00",
+      "message": "Thanks. That is all for today"
+    },
+    {
+      "sender": "Assistant",
+      "timestamp": "2024-05-23T18:52:35.936153+00:00",
+      "message": "\n    You're welcome, tpap. I hope you have a great rest of your day. Remember to keep working towards your alignment goals and delivering results goals. Let me know if you need any further assistance with organizing your tasks. Have a good one!"
     }
+  ],
+  "metadata": {
+    "language": "en",
+    "context": {},
+    "user_name": "tpap"
+  }
 }
