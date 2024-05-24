@@ -3,10 +3,10 @@
 from mongodb import db
 import utils.config as config
 
-# Access the collection
-collection = db['conversations']
-
 def get_conversations(user_name):
+    # Access the collection
+    collection = db['conversations']
+    
     # Find all conversations for a specific user
     conversations = collection.find({"metadata.user_name": user_name})
     return list(conversations)
