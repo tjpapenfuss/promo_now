@@ -1,3 +1,5 @@
+#### PLACEHOLDER. Need to update with correct code. ####
+
 def start_guidance_workflow(user_name, users_collection, llm_chain):
     """Start the guidance workflow for users unsure of what to do."""
     while True:

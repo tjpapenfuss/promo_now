@@ -1,5 +1,5 @@
 from workflows.gpt_app import interactive_llm
-from utils.initialize_conversation import initialize_conversation
+from utils.conversation import initialize_conversation
 
 
 if __name__ == "__main__":
