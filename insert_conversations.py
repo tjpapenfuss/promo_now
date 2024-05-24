@@ -33,8 +33,8 @@ def conversation_to_mongo(user_name, messages):
     conversation_id = str(uuid.uuid4())
 
     #generate JSON
-    json = generate_conversation_json(conversation_id, user_name, messages)
-    print(json)
+    # json = generate_conversation_json(conversation_id, user_name, messages)
+    # print(json)
 
     # Insert the conversation into the collection
     collection.insert_one(generate_conversation_json(conversation_id, user_name, messages))

@@ -1,0 +1,59 @@
+{
+    "_id": {
+      "$oid": "664f907c5450bc075925b87a"
+    },
+    "user_name": "tpap",
+    "timestamp": "2024-05-23T18:52:44.359218+00:00",
+    "goals": [
+      {
+        "goal_id": "1",
+        "goal": "Align the surface platform with the FoF platform for the enterprise data teams",
+        "status": "In Progress",
+        "created_at": "2024-05-21T09:00:00.000000+00:00",
+        "updated_at": "2024-05-23T18:52:44.359218+00:00",
+        "sub_goals": [
+          {
+            "sub_goal_id": "1.1",
+            "sub_goal": "Discuss alignment strategies with Joe",
+            "status": "Completed",
+            "created_at": "2024-05-21T10:00:00.000000+00:00",
+            "updated_at": "2024-05-21T11:00:00.000000+00:00"
+          },
+          {
+            "sub_goal_id": "1.2",
+            "sub_goal": "Implement initial alignment plan",
+            "status": "In Progress",
+            "created_at": "2024-05-22T09:00:00.000000+00:00",
+            "updated_at": "2024-05-23T18:52:44.359218+00:00"
+          }
+        ]
+      },
+      {
+        "goal_id": "2",
+        "goal": "Develop LLM for organizational app",
+        "status": "In Progress",
+        "created_at": "2024-05-20T09:00:00.000000+00:00",
+        "updated_at": "2024-05-23T18:52:44.359218+00:00",
+        "sub_goals": [
+          {
+            "sub_goal_id": "2.1",
+            "sub_goal": "Write initial code for LLM",
+            "status": "Completed",
+            "created_at": "2024-05-20T10:00:00.000000+00:00",
+            "updated_at": "2024-05-20T15:00:00.000000+00:00"
+          },
+          {
+            "sub_goal_id": "2.2",
+            "sub_goal": "Test and debug LLM code",
+            "status": "In Progress",
+            "created_at": "2024-05-21T09:00:00.000000+00:00",
+            "updated_at": "2024-05-23T18:52:44.359218+00:00"
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "language": "en",
+      "context": {}
+    }
+  }

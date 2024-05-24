@@ -1,7 +1,8 @@
 # create_user.py
-
 from pymongo import MongoClient
 import config
+import uuid
+
 
 # Connect to the MongoDB server on DigitalOcean
 client = MongoClient(config.mongo_db_connection)
@@ -25,6 +26,7 @@ def create_user(user_name, name, email):
     
     # Create a new user document
     user = {
+        "user_id": str(uuid.uuid4()), # make a random UUID for the user's unique ID. 
         "user_name": user_name,
         "name": name,
         "email": email
