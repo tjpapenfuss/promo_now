@@ -1,13 +1,7 @@
 # query_conversations.py
 
-from pymongo import MongoClient
+from mongodb import db
 import config
-
-# Connect to the MongoDB server on DigitalOcean
-client = MongoClient(config.mongo_db_connection)
-
-# Access the database
-db = client['conversation_db']
 
 # Access the collection
 collection = db['conversations']

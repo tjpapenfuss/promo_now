@@ -1,5 +1,4 @@
 # from langchain import LLMChain
-from langchain_core.prompts import PromptTemplate
 from langchain_openai import OpenAI
 from pymongo import MongoClient
 import os
@@ -8,8 +7,14 @@ from datetime import datetime, timezone
 # My personal libraries 
 import insert_conversations
 from create_user import create_user, get_user_info
+from utils.prompt_templates import create_prompt_template
 from query_conversations import get_conversations, format_conversations
 import config
+from promo_now import (
+    create_user, get_user_info
+    # users_collection, llm_chain, handle_crud_workflow, general_assistance, 
+    # list_activities, summarize_achievements, provide_tips, start_guidance_workflow
+)
 
 # Set your OpenAI API key here
 os.environ["OPENAI_API_KEY"] = config.api_key
@@ -21,26 +26,6 @@ def get_openai_llm():
 def initialize_conversation_history(user_name):
     previous_conversations = get_conversations(user_name)
     return format_conversations(previous_conversations)
-
-def create_prompt_template():
-    # Define your prompt template
-    template = """
-    You are a helpful assistant. You are trying to help the user to organize their goals into alignment goals and 
-    delivering results goals. 
-
-    Previous Conversations:
-    {prev_conversation}
-
-    Conversation history:
-    {history}
-
-    User: {user_input}
-
-    Assistant:
-    """
-
-    # Create a PromptTemplate instance
-    return PromptTemplate(input_variables=["prev_conversation", "history", "user_input"], template=template)
 
 def initialize_conversation():
     # Ask for username
