@@ -13,10 +13,10 @@
 # My personal libraries 
 from mongodb.insert_conversations import conversation_to_mongo
 from utils.conversation import insert_to_history
+from workflows import llm_chain
 
 # Main function to handle the LLM. 
 def interactive_llm(user_name, conversation_history, prev_conversations):
-    llm_chain = llm_chain
         
     while True:
         # Get user input from the terminal
