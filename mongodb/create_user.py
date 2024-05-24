@@ -1,14 +1,6 @@
 # create_user.py
-from pymongo import MongoClient
-import config
 import uuid
-
-
-# Connect to the MongoDB server on DigitalOcean
-client = MongoClient(config.mongo_db_connection)
-
-# Create (or use existing) database
-db = client['conversation_db']
+from mongodb import db
 
 # Create (or use existing) collection for users
 user_collection = db['users']

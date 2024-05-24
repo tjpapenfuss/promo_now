@@ -1,18 +1,12 @@
 # query_conversations.py
 
-from pymongo import MongoClient
-import config
-
-# Connect to the MongoDB server on DigitalOcean
-client = MongoClient(config.mongo_db_connection)
-
-# Access the database
-db = client['conversation_db']
-
-# Access the collection
-collection = db['conversations']
+from mongodb import db
+import utils.config as config
 
 def get_conversations(user_name):
+    # Access the collection
+    collection = db['conversations']
+    
     # Find all conversations for a specific user
     conversations = collection.find({"metadata.user_name": user_name})
     return list(conversations)
