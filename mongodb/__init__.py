@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-import config
+import utils.config as config
 
 # MongoDB setup
 # Connect to the MongoDB server on DigitalOcean

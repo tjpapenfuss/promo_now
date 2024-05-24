@@ -1,3 +1,5 @@
+#### NEED TO CLEAN THIS UP #####
+
 import os
 from langchain.prompts import PromptTemplate
 from langchain.llms import OpenAI
@@ -17,7 +19,7 @@ import mongodb.insert_conversations
 from mongodb.create_user import create_user, get_user_info
 from utils.prompt_templates import create_prompt_template
 from mongodb.query_conversations import get_conversations, format_conversations
-import config
+import utils.config as config
 
 # Initialize LLM and prompt template
 llm = get_openai_llm()

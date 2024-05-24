@@ -1,7 +1,7 @@
 # query_conversations.py
 
 from mongodb import db
-import config
+import utils.config as config
 
 # Access the collection
 collection = db['conversations']
