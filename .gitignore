@@ -1,4 +1,4 @@
 /utils/config.py
 index.json
 /mongodb/config.py
-**/__pycache__/
+**/__pycache__/**
