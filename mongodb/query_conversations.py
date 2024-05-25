@@ -1,12 +1,12 @@
 # query_conversations.py
 
-from mongodb import db
+from mongodb import conversation_db
 import utils.config as config
 
 def get_conversations(user_name):
     # Access the collection
-    collection = db['conversations']
-    
+    collection = conversation_db['conversations']
+
     # Find all conversations for a specific user
     conversations = collection.find({"metadata.user_name": user_name})
     return list(conversations)

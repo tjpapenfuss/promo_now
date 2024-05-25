@@ -1,4 +1,4 @@
-from mongodb import db
+from mongodb import conversation_db
 from datetime import datetime, timezone
 import uuid
 
@@ -19,7 +19,7 @@ def generate_conversation_json(conversation_id, user_name, messages):
 def conversation_to_mongo(user_name, messages):
 
     # Create (or use existing) collection
-    collection = db['conversations']
+    collection = conversation_db['conversations']
 
     # make a random UUID
     conversation_id = str(uuid.uuid4())

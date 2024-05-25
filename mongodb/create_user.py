@@ -1,12 +1,26 @@
 # create_user.py
 import uuid
-from mongodb import db
+from mongodb import users_db
 
 # Create (or use existing) collection for users
-user_collection = db['users']
+user_collection = users_db['users']
 
 def get_user_info(user_name):
     return user_collection.find_one({"user_name": user_name})
+
+def get_user_id(user_name):
+    existing_user = user_collection.find_one({"user_name": user_name})
+    if existing_user:
+        return existing_user['user_id']
+    print(f"Username {user_name} doesn't exist.")
+    return 
+
+def get_user_name(user_id):
+    existing_user = user_collection.find_one({"user_id": user_id})
+    if existing_user:
+        return existing_user['user_name']
+    print(f"User ID {user_id} doesn't exist.")
+    return 
 
 # Function to create a new user
 def create_user(user_name, name, email):

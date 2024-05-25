@@ -2,7 +2,7 @@
     "_id": {
       "$oid": "664f907c5450bc075925b87a"
     },
-    "user_name": "tpap",
+    "user_id": "tpap",
     "timestamp": "2024-05-23T18:52:44.359218+00:00",
     "goals": [
       {

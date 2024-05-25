@@ -6,8 +6,10 @@ import mongodb.config
 # Connect to the MongoDB server on DigitalOcean
 client = MongoClient(config.mongo_db_connection)
 # Create (or use existing) database
-db = client['conversation_db']
+conversation_db = client['conversation_db']
+
+users_db = client['users']
 
 __all__ = [
-    db
+    conversation_db, users_db
 ]
