@@ -3,7 +3,7 @@ from utils.conversation import initialize_conversation
 
 # Delete later
 from mongodb.create_user import get_user_id
-from mongodb.insert_goals import delete_goal
+from mongodb.insert_goals import delete_goal, list_goals
 # create_user("jorbear", "jor", "ffds@gmail.com")
 # print(get_user_id("jorbear"))
 
