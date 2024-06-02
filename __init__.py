@@ -1,7 +1,7 @@
 #### NEED TO CLEAN THIS UP #####
 
 import os
-from langchain.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate
 from langchain.llms import OpenAI
 from langchain.chains import LLMChain
 
